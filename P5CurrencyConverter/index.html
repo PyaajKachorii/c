@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Currency Converter</title>
+		<script>
+			function convertCurrency() {
+				let rupees =document.getElementById("rupees").value;
+				if (rupees === "") {
+					alert("Please enter an amount");
+					return;
+				}
+				let url = "http://localhost:8080/api/convert?rupees=" + rupees;
+				fetch(url).then(response => {
+					document.getElementById("status").innerHTML ="HTTP Status Code: " + response.status;
+					return response.text();
+				}).then(data => {
+					document.getElementById("response").innerHTML = data;
+				}).catch(error => {
+					document.getElementById("response").innerHTML ="Error connecting to server";
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<h2>Currency Converter</h2>
+		<label>Enter INR Amount:</label>
+		<input type="number" id="rupees">
+		<br><br>
+		<button onclick="convertCurrency()">Convert</button>
+		<br><br>
+		<h3 id="status"></h3>
+		<h3>Response Payload:</h3>
+		<pre id="response"></pre>
+	</body>
+</html>

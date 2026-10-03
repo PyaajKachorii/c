@@ -1,0 +1,1 @@
+import urllib.request; print(urllib.request.urlopen('http://localhost:8080/api/convert?rupees=5000').read().decode())

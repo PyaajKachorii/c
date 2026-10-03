@@ -1,0 +1,1 @@
+fetch('http://localhost:8080/api/convert?rupees=5000').then(r => r.json()).then(console.log);
