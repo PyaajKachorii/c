@@ -11,3 +11,45 @@ if __name__ == "__main__":
     server = HTTPServer(('0.0.0.0', 8080), SimpleCloudApp)
     print("[*] Containerized service listening on port 8080...")
     server.serve_forever()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+'''cd C:\cloud-demo-app
+docker build -t cloud-demo-app .
+
+docker run -d -p 8080:8080 --name cloud_container cloud-demo-app
+
+
+docker stop cloud_container
+
+docker rm cloud_container'''
